@@ -1,0 +1,18 @@
+@startuml POS
+left to right direction
+actor POS
+rectangle "System" as system {
+  (Display Order Total)
+  (Take Customer Payment)
+  (Process Payment)
+  (Process Order)
+  (Provide Receipt)
+ 
+}
+POS --> (Display Order Total)
+POS --> (Take Customer Payment)
+POS --> (Process Payment)
+POS --> (Process Order)
+POS --> (Provide Receipt)
+
+@enduml
