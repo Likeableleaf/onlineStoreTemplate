@@ -1,0 +1,74 @@
+@startuml classes
+' set namespaceSeparator none
+' class "Customer" as core.customer.Customer #aliceblue {
+'   sessions : dict
+'   add_new_session(username: str, db: Database) -> None
+'   get_all_sessions() -> dict
+'   get_session(username: str) -> UserSession
+'   remove_session(username: str) -> None
+' }
+' class "UserSession" as core.session.UserSession #aliceblue {
+'   cart : dict
+'   date : NoneType, datetime
+'   db : Database
+'   total_cost : int
+'   username : str
+'   add_new_item(id: str, name: str, price: int, quantity: int, discount: float, tax_rate: float) -> None
+'   empty_cart() -> dict
+'   is_item_in_cart(id: str) -> bool
+'   remove_item(id: str) -> None
+'   submit_cart() -> None
+'   update_item_quantity(id: str, change_to_quantity: int) -> None
+'   update_total_cost() -> None
+' }
+class Order{
+  OrderId : Guid
+  cart : dict
+  CustomerId : Guid 
+  int total_cost()
+  decimal tax_rate()
+
+}
+
+class OrderItem{
+  OrderItemId : Guid
+  quantity : Integer 
+  UnitPrice : decimal
+  UnitTax : decimal
+  decimal TotalTax()
+  decimal TotalPrice()
+  ProductId : Guid
+}
+
+class Product{
+  ProductId : Guid
+  Name : String
+  Price : decimal
+  Tax : decimal
+  ImagePath : String 
+}
+
+class Payment{
+  PaymentId : Guid
+  PaymentStatus : PaymentStatus
+  PaymentType : PaymentType
+  Updated : DateTime
+  Amount : decimal
+  OrderId : Guid
+  void Pay(nameOnCard, creditCardNumber, securityCode, expirationDate)
+}
+
+enum PaymentType{
+  credit card, cash
+}
+enum PaymentStatus{
+  in progress, paid 
+}
+
+Order "1" *-- "n" OrderItem
+OrderItem o-- Product
+Payment o-- Order
+Payment *-- PaymentType
+Payment *-- PaymentStatus
+Order o-- Customer
+@enduml

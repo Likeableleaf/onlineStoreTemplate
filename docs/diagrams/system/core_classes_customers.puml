@@ -1,0 +1,30 @@
+@startuml classes
+
+class Customer {
+  customerId : Guid
+  Name : string
+  Address : Address
+
+}
+class Address{
+  StreetLine1: string
+  StreetLine2: string
+  Zip : Zip
+  City: City
+  State : State
+  Country : Country
+}
+
+class Zip{
+  code : Integer 
+}
+
+enum City{}
+enum State{}
+Order o-- Customer
+Customer *-- Address
+Address *-- City
+Address *-- Zip
+Address *-- State
+
+@enduml
