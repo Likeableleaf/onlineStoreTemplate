@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html>
+<head><meta name='robots' content='none' /><base href="https://na.network-auth.com/splash/2138QdK.8.470/asset/" />
+  <title> BNWiFi</title>
+
+  <style type="text/css" media="screen">
+    html { font-size: 100%;-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+form { margin: 0; }
+label { cursor: pointer; }
+button, input {
+  -webkit-appearance:none;
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline;
+  *vertical-align: middle;
+  line-height: normal;
+  *overflow: visible;
+}
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
+
+a, a:visited, a:active {color: #fff; text-decoration: none;}
+
+.hidden { display: none; }
+
+body {
+  margin: 0;
+  background: #eee;
+  color: #555;
+  font-size: 14px;
+  line-height: 1.4em;
+  font-family: georgia, palatino, serif;
+}
+
+h1, h2,  h3, p, a {
+  font-family: CiscoSans, helvetica, helvetica neue, verdana, tahoma, sans-serif;
+}
+h1 {
+  font-size: 30px;
+  font-weight: 100;
+  line-height: 35px;
+  color: #555;
+  margin: 0 0 1em;
+}
+h2 {
+  font-size: 14px;
+  font-weight: normal;
+}
+h3 {
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: #888;
+}
+p{
+  color: #555;
+}
+
+.link_in_text a { color: #555 }
+
+.header {
+  border-bottom: 1px solid #ddd;
+  padding: 2em 0;
+  margin: 0 0 2em 0;
+}
+
+.header table { width: 100%; }
+#title_cell { vertical-align: bottom; }
+#icon_cell { text-align: center; }
+#icon_cell img {
+  max-width: 200px;
+  max-height: 100px;
+}
+
+#container {
+  max-width: 900px;
+  min-width: 300px;
+  margin: 0 auto;
+  background: #fff;
+  text-align: center;
+}
+
+#content {
+  background: #fff;
+}
+
+#continue {
+  padding: 2em;
+}
+
+#blocked {
+  padding: 2em;
+}
+
+#auth {
+  box-sizing: border-box;
+  padding: 0 1.5em 2em;
+}
+
+#left_col {
+  width: 100%;
+  margin-bottom: 3em;
+  text-align: left;
+}
+
+#right_col {
+  width: 100%;
+  text-align: left;
+  margin-top: 4em;
+  margin: 0 auto;
+}
+
+#account a {
+  color: #1795E6;
+  margin-right:  1em;
+  padding-right: 1em;
+  border-right: 1px solid #ccc;
+}
+
+#account a:hover {
+  color: #0876BD;
+}
+
+#account a:last-child {
+  border: none;
+}
+
+#sign_in {
+  background: #777777;
+  color: #ffffff;
+  border-radius: 2px;
+  margin: 2.5em 0 1em;
+  padding: 1em;
+  box-sizing: border-box;
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+}
+
+#sign_in:hover {
+  opacity: .85;
+}
+
+#blocked_msg {
+  text-align: center;
+  padding: 15px 0;
+}
+
+#claim_ap_msg {
+  text-align: center;
+  padding: 15px 0;
+}
+
+.formarea h3 {
+  line-height: 0;
+}
+
+.formarea input {
+  background: #eee;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  border-radius: 2px;
+  padding: .7em;
+  width: 100%;
+}
+
+#email_field {
+  margin-bottom: 1.5em;
+}
+
+.button {
+  color: #ffffff;
+  background: #777777;
+  padding: 1em 2em;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  display: inline-block;
+  margin: 1em 0;
+}
+
+.button:hover {
+  opacity: .85;
+}
+
+#forgot_password, .form_links:not(.hidden) {
+  display: inline;
+}
+
+#signin_form .form_links {
+  float: right;
+}
+
+#forgot_password a,
+.form_links a {
+  font-size:  12px;
+  color: #1795E6;
+}
+
+#forgot_password a:hover,
+.form_links a:hover {
+  color: #0876BD;
+}
+
+#create_account_form h3 {
+  margin-top: 3em;
+}
+
+.footer {
+  width: 100%;
+  background: #eee;
+  border-top: 1px solid #ddd;
+  padding: 2em 0;
+  text-align: center;
+  display: inline-block;
+}
+
+.footer img {
+  margin: .5em 0;
+}
+
+.meraki_go_footer {
+  width: 100%;
+  background: #fff;
+  border-top: 1px solid #ddd;
+  padding: 2em 0;
+  text-align: center;
+  display: inline-block;
+}
+
+.meraki_go_footer img {
+  margin: .5em 0;
+}
+
+.error {
+  background: #eee;
+  border-radius: 2px;
+  border: 1px solid #ddd;
+  margin: 3em 3em 0;
+  box-sizing: border-box;
+  padding: 0 .5em;
+}
+
+.error p {
+  color: #999;
+  font-size: 12px;
+}
+
+.login-error {
+  background: #ffdddd;
+  border-radius: 2px;
+  border: 1px solid #ffb8b8;
+  box-sizing: border-box;
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+.login-error p {
+  color: #ff5959;
+  font-size: 12px;
+}
+
+.login-error img {
+  width: 11px;
+  margin: 5px 7px 0 0;
+}
+
+input:invalid, textarea:invalid { background-color: #f0dddd; }
+.formarea input:invalid, textarea:invalid { border-radius: 1px; -moz-box-shadow: 0px 0px 0px red; -webkit-box-shadow: 0px 0px 0px red; box-shadow: 0px 0px 0px red; }
+.formarea label.invalid {border: none; color: red; min-height: inherit; padding: 5px 0 0; margin: 0;}
+
+@media (min-width: 370px) {
+  #auth {
+    padding: 3em 3em 5em;
+  }
+  #left_col {
+    text-align: center;
+  }
+}
+
+@media (min-width: 550px) {
+  #auth {
+    padding: 3em 3em 5em;
+  }
+  #left_col {
+    width: 70%;
+    margin: 0 auto;
+    padding-bottom: 3em;
+    text-align: center;
+  }
+  #right_col {
+    width: 70%;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 730px) {
+  #auth {
+    display: inline-block;
+    padding: 3em 3em 5em;
+  }
+  #left_col {
+    float: left;
+    text-align: left;
+    width: 50%;
+    padding-right: 3em;
+    box-sizing: border-box;
+  }
+  #right_col {
+    float: left;
+    width: 50%;
+    margin: 0;
+    padding-left: 3em;
+    box-sizing: border-box;
+  }
+}
+
+.GoSplash .header {
+  padding-top: 4em;
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.GoSplash #blocked {
+  padding-top: 1em;
+}
+
+.GoSplash .GoSplash__blockedIcon {
+  height: 8em;
+}
+
+.GoSplash .GoSplash__blockedIconLine--primary {
+  fill: #213A44;
+}
+
+.GoSplash .GoSplash__blockedIconLine--accent {
+  fill: #16E4D8;
+}
+
+.GoSplash h1 {
+  font-weight: 300;
+  color: #213A44;
+}
+
+.GoSplash p {
+  color: #666F77;
+}
+
+@media (max-width: 400px) {
+  .GoSplash .GoSplash__blockedIcon {
+    height: 6em;
+  }
+
+  .GoSplash .header {
+    padding-top: 2em;
+    padding-bottom: 0.5em;
+  }
+
+  .GoSplash h1 {
+    font-size: 24px;
+  }
+}
+
+  </style>
+  <meta name="viewport" content="width=device-width,initial-scale=1" >
+</head>
+
+<body>
+  <div id="content">
+    <div id="container">
+      <div class="header">
+        <div id="icon_cell"><img src='data:image/png;base64,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
+' /></div>
+      </div>
+
+      <div id="continue">
+        <h1>Welcome to BNWiFi</h1>
+        <p><style>
+* {box-sizing: border-box;}
+/*body {background-color: #111;}*/
+#continue {padding: 0;}
+#wifi-splash {display: flex; justify-content: center;}
+#wifi-splash #dt {display: block; max-height: 553px;}
+#wifi-splash #dt img {width: 768px;}
+#wifi-splash #mb {display: none;}
+#wifi-splash #mb img {width: 480px;}
+#wifi-privacy-policy-bg {max-width: 768px; margin: 0 auto; background-color: #111; display: flex; flex-direction: column;}
+#wifi-privacy-policy {overflow: auto; max-height: 90px; background-color: #4c4c4a; color: #dcdcdc; padding: 10px; margin: 0 auto 25px; font-size: 11px; font-family: sans-serif; max-width: 486px; line-height: 16px; border: 1px solid #464646; text-align: left;}
+#wifi-privacy-policy h3 {margin-top: 0; font-size: 12px; color: #dcdcdc;}
+#wifi-privacy-policy > h3 {text-align: center; font-family: Arial, sans-serif; font-weight: 400; font-size: 15px; line-height: 1.15;}
+#wifi-privacy-policy p {color: #dcdcdc; font-size: 11px; line-height: 14px;}
+#wifi-privacy-policy a {color: #fff; text-decoration: underline;}
+a.button, a.wifi-continue-btn {width: auto; height: 35px;font-family: Lato, sans-serif; font-size: 11px; font-weight: bold;line-height: 33.5px; letter-spacing: 0.8px; color: #ffffff; background-color: #476102; border-radius: 0; padding: 14px 16px 12px !important; display: inline-flex; text-transform: uppercase; align-items: center; margin: 5px 0 25px;}
+a.wifi-continue-btn {margin: 0 auto; text-decoration: none;}
+
+@media screen and (max-width: 900px) {
+	#wifi-privacy-policy {max-height: 90px;}
+}
+@media screen and (max-width: 480px) {
+	#wifi-splash {overflow: hidden;}
+	#wifi-splash #dt {display: none;}
+	#wifi-splash #mb {display: block; max-height: 597px;}
+	#wifi-privacy-policy {max-width: 308px; max-height: 77px;}
+}
+@media screen and (max-width: 400px) {
+  #continue div:nth-of-type(3) {margin: 0 40px;}
+}
+@media screen and (max-width: 375px) {
+  #continue div:nth-of-type(3) {margin: 0 30px;}
+}
+@media screen and (max-width: 320px) {
+  #continue div:nth-of-type(3) {margin: 0 20px;}
+}
+
+</style>
+<div id="wifi-splash">
+	<div id="dt"><img src="https://dispatch.barnesandnoble.com/content/dam/ccr/h/wifi-splash/Wifi_Membership-2023_blue-Desktop.png" alt="Scroll To Connect - Join Barnes &amp; Noble Premium Membership and Save! 10% Off* Almost Everything And You Earn B&amp;N Rewards - 1 Stamp for Every $10 Spent, 10 Stamps = $5 Reward and Much More! *Online and In Stores, some exclusions apply. See a bookseller for details. Connect To Our Complimentary Wi-Fi"></div>
+	<div id="mb"><img src="https://dispatch.barnesandnoble.com/content/dam/ccr/h/wifi-splash/Wifi_Membership-2023_blue-Mobile.png" alt="Scroll To Connect - Join Barnes &amp; Noble Premium Membership and Save! 10% Off* Almost Everything And You Earn B&amp;N Rewards - 1 Stamp for Every $10 Spent, 10 Stamps = $5 Reward and Much More! *Online and In Stores, some exclusions apply. See a bookseller for details. Connect To Our Complimentary Wi-Fi"></div>
+</div>
+<div id="wifi-privacy-policy-bg">
+	<div id="wifi-privacy-policy">
+		<h3>The Barnes &amp; Noble Wifi Terms&nbsp;of&nbsp;Use</h3>
+
+    <p>Welcome to The Barnes &amp; Noble Wifi Service (the “Service”) provided by Barnes &amp; Noble Booksellers, Inc. (“we”, “us” or “our”). Our Service may only be used by our or our affiliate’s employees, guests, customers, associates and service providers subject to these Terms of Use (“Terms”) and our Privacy Policy (<a href="https://www.barnesandnoble.com/h/help/privacy-policy">https://www.barnesandnoble.com/h/help/privacy-policy</a>). If you are not an employee, guest, customer, associate or service provider of ours or one of our affiliates, or you do not agree to these Terms or our Privacy Policy, you may not access the Service. <b>When you use the Service, you indicate your acceptance of these Terms and our Privacy Policy.</b>
+
+    </p><h3>Acceptance</h3>
+    <p> You represent and warrant to us that you have the legal authority to accept these Terms on behalf of yourself and all persons and legal entities that you represent, including but not limited to the owner of the device you are using to access the Service (if you are not the owner yourself). The terms “you” and “your” as used herein include you and any persons or legal entities that you represent, inclusive of your device owner, if applicable.</p>
+
+    <h3>Acceptable Use</h3>
+    <p>You are authorized to access the Service only if you are an employee, guest, customer, associate or service provider of ours or one of our affiliates subject to these Terms and the Privacy Policy. You are responsible for all activities that you undertake or which are otherwise undertaken through your device while accessing the Service, including activities that you may not have authorized. You are responsible for any content, information or materials you access or transmit through the Service. You may not use the Service to engage any conduct that:</p>
+    
+    <ul class="static">
+      <li>Is unlawful, harmful, threatening, abusive, harassing, defamatory, vulgar, obscene, libelous, sexually explicit, profane, hateful or incites prejudice against others;</li>
+      <li>Encourages conduct that would constitute a criminal offense, give rise to civil liability or otherwise violate applicable law;</li>
+      <li>Falsely states or misrepresents your affiliation with a person or entity;</li>
+      <li>Infringes the rights of others, including patents, trademarks, copyrights, trade secrets or other proprietary rights, or violates any individual’s rights to privacy; and</li>
+      <li>Interferes with or impacts the proper operation or security of the Service or other systems, networks or property.</li>
+    </ul>
+
+    <p>Engaging in improper use of the Service is prohibited. We reserve the right to investigate and/or prosecute such cases and may cooperate with law enforcement in doing so.</p>
+
+    <h3>Content Monitoring</h3>
+    
+    <p>You acknowledge and agree that we may receive certain information about content or communications you access, send, receive or use through the Service. You understand that we may but are not required to monitor the content or materials made available over the Internet by third parties. However, we may remove, filter, block or restrict by any other means any websites or materials that, in our sole discretion, may be illegal, inappropriate, subject us to liability, or violate these Terms. We may use information about content or communications for the following purposes:</p>
+
+    <ul class="static">
+      <li>To filter, block or restrict access to illegal or inappropriate content;</li>
+      <li>To use reasonable efforts to ensure availability of bandwidth for all Service users;</li>
+      <li>To provide reasonable security measures to prevent unauthorized access to the Service;</li>
+      <li>To improve or repair the Service; and</li>
+      <li>To disclose information to law enforcement or government agencies as we may deem necessary in our sole discretion to comply with applicable laws.</li>
+    </ul>
+
+    <p>Your use of the Service constitutes your irrevocable consent to our receipt, collection, use, storage and disclosure of such content and communications.</p>
+
+    <h3>Privacy</h3>
+
+    <p>In addition to the information described above in the section entitled “Content Monitoring”, you understand and agree that if you access the Service, we will receive certain information about you and your device, which may include MAC address, IP address, unique device identifiers, and your real-time geographic location. We may use this to provide the Service, to provide reasonable security measures to prevent unauthorized access to the Service and to improve or repair the Service. Your use of the Service constitutes your irrevocable consent to our receipt, collection, use, storage and disclosure of the information described above. We may share such information consistent with our Privacy Policy.</p>
+
+    <h3>Security</h3>
+
+    <p>We use reasonable efforts to protect the Service from security risks such as malware and unauthorized use or access. However, you acknowledge and agree that any use of the Internet, including access to the Internet over a wireless network, involves security, privacy and confidentiality risks and that we cannot and do not guarantee that the Service or the device you use to access to the Service is or will be free of such risks, or that your communications through our Service will be secure. It is solely your responsibility to know and understand the risks of using public communication means such as unsecured wireless networks to transmit communications or content.</p>
+
+    <p>In order to help us protect the Service, you agree that you will use reasonable preventative measures, including but not limited to the following, in connection with your use of the Service:</p>
+    
+    <ul class="static">
+      <li>Maintaining up-to-date malware and virus protection on your device;</li>
+      <li>Avoiding communications or websites that transmit malware;</li>
+      <li>Notifying us immediately of any security issue you may detect with respect to the Service.</li>
+    </ul>
+
+    <h3>You agree that we will have no liability to you or anyone else for any interception of your communications, loss of data, file corruption, hacking or damage to your device or network that results from your use of our Service.</h3>
+
+    <h3>Disclaimer</h3>
+
+    <h3>USE OF THE SERVICE IS AT YOUR OWN RISK. WE PROVIDE THE SERVICE TO YOU SOLELY AS A CONVENIENCE ON AN “AS IS”, “WITH ALL FAULTS” AND “AS AVAILABLE” BASIS. WE MAKE NO WARRANTIES OR REPRESENTATIONS OF ANY KIND, WHETHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, COURSE OF PERFORMANCE OR COURSE OF DEALING OR NON-INFRINGEMENT. WE DO NOT WARRANT THAT THE USE OF THE SERVICE WILL BE SECURE, UNINTERRUPTED OR FREE OF ERRORS, VIRUSES OR HARMFUL CODE, OR THAT ANY DEFECTS WILL BE CORRECTED. YOU ARE SOLELY RESPONSIBLE FOR ANY LOSSES TO YOUR DEVICES, SYSTEMS OR DATA RESULTING FROM YOUR USE OF THE SERVICE. WE MAKE NO WARRANTY OR REPRESENTATION REGARDING ANY CONTENT, MATERIALS OR OTHER INFORMATION ACCESSED THROUGH THE SERVICE.<p></p>
+
+    </h3><h3>Limitation of Liability</h3>
+
+    <p>TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, UNDER NO CIRCUMSTANCES WILL WE BE LIABILE TO YOU OR ANYONE ELSE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL OR CONSEQUENTIAL DAMAGES ARISING FROM YOUR USE OF THE SERVICE, INCLUDING BUT NOT LIMITED TO DAMAGES FOR LOSS OF USE, PROFITS, DATA OR OTHER INTANGIBLES, EVEN IF WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. IF YOU ARE NOT SATISFIED WITH YOUR USE OF THE SERVICE, YOUR SOLE REMEDY IS TO DISCONTINUE YOUR USE OF THE SERVICE. YOU ACKNOWLEDGE THAT THE SERVICE IS PROVIDED AS A CONVENIENCE TO YOU AND THAT BUT FOR THE LIMITATION OF LIABILITY WE AND YOU AGREE IN THIS PARAGRAPH, WE WOULD NOT DO SO. BECAUSE SOME JURISDICTIONS DO NOT ALLOW CERTAIN LIMITATIONS OF LIABILITITY, SOME OF THE FOREGOING LIMITATIONS MAY NOT APPLY TO YOU.</p>
+
+    <h3>Indemnification</h3>
+
+    <p>You agree that you will indemnify us and our affiliates, and the officers, directors, employees, service providers and customers thereof (except as they are users of the Service), from and against any claims, losses, liabilities, damages or costs of any nature (including attorneys’ and experts’ fees and court costs) that arise from your use of the Service. We reserve the right to assume exclusive control of any matter subject to indemnification. If we elect such option, you agree to cooperate with us in the matter.</p>
+
+    <h3>Termination</h3>
+
+    <p>We may limit, suspend or terminate the Service at any time and for any reason without notice or liability to you.</p>
+
+    <h3>Jurisdiction</h3>
+
+    <p>These Terms are governed by the laws of the State of New York without regard to its principles of conflicts of law. Any claim or controversy at law or equity that arises out of your use of the Service shall be resolved through binding arbitration conducted by telephone, online or based solely upon written submissions where no in-person appearance is required. In such cases, the arbitration shall be administered by the American Arbitration Association under its Commercial Arbitration Rules (including without limitation the Supplementary Procedures for Consumer-Related Disputes, if applicable), and judgment on the award rendered by the arbitrator(s) may be entered in any court having jurisdiction thereof. Alternatively, at our sole option, we may bring an action in a court of competent jurisdiction located in New York County, New York.</p>
+
+    <h3>Miscellaneous</h3>
+
+    <p>These Terms constitute the entire agreement between us and you regarding your use of the Service. No provision hereof may be modified by any of our employees or agents. If any provision of these Terms is unlawful, void or unenforceable, the remaining provisions of these Terms shall remain in full force and effect. You may not assign any of your rights or obligations under these Terms under any circumstances without our prior written consent, which we may grant or withhold in our sole discretion. We may assign these Terms or any of our rights or obligations without your consent.</p>
+    
+    <p>We may update or revise these Terms at any time without prior notice or liability.</p>
+	</div>
+	
+</div></p>
+        <a class="button" href="https://na.network-auth.com/splash/2138QdK.8.470/grant?continue_url=http://google.com/" onclick = "javascript:(function() {
+          var _request = new XMLHttpRequest();
+          var url = 'https://na.network-auth.com/splash/2138QdK.8.470/grant?continue_url=CONTINUE_URL_PLACEHOLDER';
+          _request.open('HEAD', window.location, true);
+          _request.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+          _request.onreadystatechange = function() {
+            if (_request.readyState === 4) {
+              var continue_url = _request.getResponseHeader('Continue-Url');
+              window.location.href = url.replace('CONTINUE_URL_PLACEHOLDER', continue_url);
+            };
+          };
+          _request.send(null);
+        })(); return false;" title="Continue to the Internet">Continue to the Internet</a>
+      </div>
+    </div>
+    <div class="footer">
+      <h3>POWERED BY</h3>
+      <img width="100" alt="Cisco Meraki" src="/images/cisco-meraki-gray.png" />
+    </div>
+  </div>
+
+      <script type="text/javascript" charset="utf-8">
+                function getButtonContainer() {
+          return document.getElementsByClassName('color_button')[0];
+        }
+
+        function getButton() {
+          return document.getElementsByClassName('btn')[0] || document.getElementsByClassName('button')[0];
+        }
+
+        function disableButton(button) {
+          button.disabled = true;
+          if (button.nodeName == 'A') {
+            button.style.pointerEvents = 'none';
+          } else if (button.nodeName == 'INPUT') {
+            button.style.cursor = 'not-allowed';
+          }
+        }
+
+        function enableButton(button) {
+          button.disabled = false;
+          if (button.nodeName == 'A') {
+            button.style.pointerEvents = 'auto';
+          } else if (button.nodeName == 'INPUT') {
+            button.style.cursor = 'auto';
+          }
+        }
+
+        function handleClick(elem) {
+          var button = getButton();
+          if (elem.checked) {
+            enableButton(button)
+          } else {
+            disableButton(button);
+          }
+        }
+
+        document.addEventListener("DOMContentLoaded", function(event) {
+          var buttonContainer = getButtonContainer();
+          var button = getButton();
+          disableButton(button);
+
+          var gdprConsent = document.createElement('div');
+          var consentMsg = "By clicking here, I state that I have read<br>and understood the above Terms of Use.";
+          var consentHTML = '<p style="font-weight:bold">You must consent to the following to access the internet.</p>' +
+            '<div class="flex-container">' +
+              '<input type="checkbox" id="gdpr_checkbox" onchange="handleClick(this)" style="-webkit-appearance: checkbox; margin-right: 5px; width: inherit"/>' +
+              '<pre style="display: inline-flex; margin-top: 0; white-space: pre-wrap;">' +
+                '<label for="gdpr_checkbox" style="font-family: CiscoSans, helvetica, helvetica neue, verdana, tahoma, sans-serif;">' + consentMsg + '</label>' +
+              '</pre>' +
+            '</div>';
+          gdprConsent.innerHTML = consentHTML;
+          if (buttonContainer) {
+            buttonContainer.parentNode.insertBefore(gdprConsent, buttonContainer);
+          } else {
+            button.parentNode.insertBefore(gdprConsent, button);
+          }
+        });
+
+              function update_form_action_from_headers(form) {
+        var _request = new XMLHttpRequest();
+        var url = 'https://na.network-auth.com/BNWiFi/hi/mblE7aK/login?continue_url=CONTINUE_URL_PLACEHOLDER';
+        _request.open('HEAD', window.location, true);
+        _request.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+        _request.onreadystatechange = function() {
+          if (_request.readyState === 4) {
+            var continue_url = _request.getResponseHeader('Continue-Url');
+            form.action = url.replace('CONTINUE_URL_PLACEHOLDER', continue_url);
+            form.submit();
+          }
+        }
+        _request.send(null);
+        return false;
+      }
+
+        
+      </script>
+
+</body>
+</html>
