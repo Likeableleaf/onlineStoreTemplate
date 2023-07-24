@@ -1,0 +1,21 @@
+@startuml packages
+set namespaceSeparator none
+package "database" as database #aliceblue {
+    [SaleRetrieve] --> [RetrieveUser]: use
+    [SaleRetrieve] --> [ItemRetrieve]: use
+    [Customers] --> [SaleRetrieve]: use
+}
+
+
+package "database.db" as database.db #aliceblue {
+    [NewItem] --> [NewSale]: use
+    [NewItem] --> [NewUser]: use
+}
+
+
+package "database.reset_database" as database.reset_database #aliceblue {
+    [New_Database] --> [Users]: use
+    [New_Database] --> [Items]: use
+    [New_Database] --> [setItem]: use
+}
+@enduml
