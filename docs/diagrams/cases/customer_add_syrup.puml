@@ -1,0 +1,21 @@
+@startuml customer
+left to right direction
+actor Customer
+rectangle "System" as system {
+  (Order Form)
+  (Add-on Form)
+  (View Cart)
+  (View Items)
+  (View Orders)
+  (View Profile)
+  (Checkout)
+}
+Customer --> (Order Form)
+Customer --> (Add-on Form)
+[Order Form] --> (Add-on Form)
+[Add-on Form] --> (View Cart)
+[View Cart] --> (View Items)
+[View Items] --> (Checkout)
+[Checkout] --> (View Orders)
+
+@enduml

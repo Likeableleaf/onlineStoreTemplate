@@ -1,0 +1,24 @@
+@startuml login
+actor Customer
+boundary "System" as system
+control "Sessions" as sessions
+control "Processing" as processing
+Customer -> system: View_Order_Form
+activate system
+system -> system: Select_Item
+activate system
+system --> system: True
+activate system
+system -> sessions: Select_add-on(s)
+activate sessions
+sessions --> system: None
+deactivate sessions
+system -> system: redirect_to_home_page
+activate system
+system -> processing: View_Cart
+activate processing
+processing -> system: Order_Submit
+deactivate processing
+system -> system: Close_Order_Form
+deactivate system
+@enduml
