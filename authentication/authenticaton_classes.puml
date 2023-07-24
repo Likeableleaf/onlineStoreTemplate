@@ -1,0 +1,18 @@
+@startuml classes
+set namespaceSeparator none
+
+class "hash_password(password: str, salt: str = None) -> tuple" as hash_password << (F,lightgreen) Function >> {
+    encoded_password: str
+    salt: str
+    key: str
+    __init__(password: str, salt: str = None)
+    hash_password() -> tuple
+    username_exists(username: str) -> bool
+    update_passwords(username: str, key: str, salt: str)
+    check_password(password: str, salt: str, key: str) -> bool
+    login_pipeline(username: str, password: str) -> bool
+}
+
+note right of hash_password: Hashes a password using SHA-512.\n\nReturns a tuple of the salt and the hashed password, both as strings.\n\nSee implementation in [here|AUTHENTICATION_URL].
+
+@enduml
