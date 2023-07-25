@@ -1,0 +1,25 @@
+@startuml packages
+
+set namespaceSeparator none
+
+package "testing" as testing #aliceblue {
+    class TestClass1
+    class TestClass2
+}
+
+package "testing.auth_tests" as testing.auth_tests #aliceblue {
+    class AuthTest1
+    class AuthTest2
+}
+
+package "testing.core_tests" as testing.core_tests #aliceblue {
+    class CoreTest1
+    class CoreTest2
+}
+
+package "testing.db_tests" as testing.db_tests #aliceblue {
+    class DBTest1
+    class DBTest2
+}
+
+@enduml
