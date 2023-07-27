@@ -45,7 +45,7 @@
     width: 302px;
     background-color: #cac2c2;
     border: 1px solid rgb(178, 178, 178);
-    height: 500px;
+    height: 550px;
 }
 
 .product_card-img {
@@ -81,14 +81,17 @@
 }
 
 #add_to_cart_button {
-    background-color: #49f4d8;
+    background-color: 	#00704A;
     border-color: #ccc;
-    color: rgb(32, 30, 30);
+    color: rgb(255, 255, 255);
     width: 60px;
+    height: auto;
     font-weight: bold;
+    font-size: small;
     margin-top: 10px;
     margin-bottom: 10px;
     text-align: center;
+    margin-left: 20px;
 }
 
 
@@ -111,9 +114,9 @@
 }
 
 #checkout_button {
-    background-color: #49f4d8;
+    background-color: 	#00704A;
     border-color: #ccc;
-    color: rgb(32, 30, 30);
+    color: rgb(255, 255, 255);
     width: 220px;
     font-weight: bold;
     margin-top: 10px;

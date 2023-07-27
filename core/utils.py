@@ -66,3 +66,7 @@ def generate_unique_id() -> str:
         - A unique ID as a string.
     """
     return str(uuid.uuid4())
+
+def display_order(items: dict):
+   name = items['name']
+   return name

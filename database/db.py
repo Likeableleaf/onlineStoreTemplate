@@ -16,7 +16,7 @@ class Database:
         - cursor: The cursor of the database.
     """
 
-    def __init__(self, database_path: str = "store_records.db") -> None:
+    def __init__(self, database_path: str = "/database/store_records.db") -> None:
         self.database_path = database_path
         self.connection = sqlite3.connect(
             database_path, check_same_thread=False)
