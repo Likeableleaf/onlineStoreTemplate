@@ -18,11 +18,19 @@
                                     <h5 class="product_card-title">{{ product.item_name }}</h5>
                                     <p class="product_card-text">{{ product.info }}</p>
                                     <p class="product_card-price">${{ product.price }}</p>
+                                    <form>
+                                        <div>
                                     <input type="number" class="quantity" id={{product.id}} name={{product.id}} placeholder="0">
-                                    <label for={{"espresso_count-" ~ product.id}}>Espresso Shots</label>
+                                    <label for={{"product.id" ~ product.id}}>Quantity</label>
+                                </div>
+                                <div>
                                     <input type="number" class="quantity" id={{"espresso_count-" ~ product.id}} 
                                         name={{"espresso_count-" ~ product.id}} placeholder="0">
+                                        <label for={{"espresso_count-" ~ product.id}}>Espresso Shots</label>
+                                        </div>
+                                         
                                         <button type="submit" class="btn btn-primary" id="add_to_cart_button">Add to Cart</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
