@@ -3,15 +3,20 @@
 {% block content %}
 
 <div class="row" id="products_page">
+    
     <div class="col-md-12">
-        <h3>Your Order:</h3>
+        <h3>Confirm Your Order Below:</h3>
         <hr>
+        
         <div class="row">
-            <p>{{name}}</p>
-            <p>{{ total_cost }} </p>
+            {% for product in products %}
+            <p>{{product.item_name}}</p>
+            {% endfor %}
+            <p> Order Total: ${{ total_cost }}0 </p>
 
         </div>
     </div>
     <button type="submit" class="btn btn-primary" id="checkout_button">Check Out</button>
 </div>
+
 {% endblock %}
