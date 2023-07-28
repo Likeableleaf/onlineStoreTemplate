@@ -20,16 +20,16 @@ INSERT into `inventory` (`item_name`, `info`, `price`, `stock`, `image_url`, `ca
 VALUES ('Macchiato', 'Our rich espresso marked with dollop of steamed milk and foam.', 5.00, 100, 'static/images/macc.jpeg', 'Coffee');
 
 INSERT into `inventory` (`item_name`, `info`, `price`, `stock`, `image_url`, `category`)
-VALUES("Caramel Latte", "Rich espresso with caramel flavor", 4.99, 10, "static/images/caramel.jpeg", "Coffee")
+VALUES('Caramel Latte', 'Rich espresso with caramel flavor', 4.99, 10, 'static/images/caramel.jpeg', 'Coffee');
 
 INSERT into `inventory` (`item_name`, `info`, `price`, `stock`, `image_url`, `category`)
 VALUES ('Espresso Shot', 'Strong and concentrated coffee.', 5.00, 100, 'static/images/espresso.jpeg', 'Coffee');
 
-INSERT into `sales` (`transaction_id`, `username`, `item_id`, `quantity`, `sale_date`, `cost`)
-VALUES ('1', 'aturing', '1', 10, '2022-12-21 7:30:30', 5.50);
+INSERT into `sales` (`transaction_id`, `username`, `item_id`, `quantity`, `sale_date`,`espresso_count`, `cost`)
+VALUES ('1', 'aturing', '1', 10, '2022-12-21 7:30:30', 10, 5.50);
 
-INSERT into `sales` (`transaction_id`, `username`, `item_id`, `quantity`, `sale_date`, `cost`)
-VALUES ('2', 'dritchie', '2', 10, '2022-12-21 7:30:30', 5.50);
+INSERT into `sales` (`transaction_id`, `username`, `item_id`, `quantity`, `sale_date`,`espresso_count`, `cost`)
+VALUES ('2', 'dritchie', '2', 10, '2022-12-21 7:30:30', 10, 5.50);
 
-INSERT into `sales` (`transaction_id`, `username`, `item_id`, `quantity`, `sale_date`, `cost`)
-VALUES ('3', 'llamport', '3', 10, '2022-12-21 7:30:30', 5.50);
+INSERT into `sales` (`transaction_id`, `username`, `item_id`, `quantity`, `sale_date`,`espresso_count`, `cost`)
+VALUES ('3', 'llamport', '3', 10, '2022-12-21 7:30:30', 10, 5.50);

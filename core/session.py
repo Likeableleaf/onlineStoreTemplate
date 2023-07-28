@@ -39,7 +39,7 @@ class UserSession:
         inventory = self.db.get_full_inventory()
         new_cart = {}
         for item in inventory:
-            new_cart[item["id"]] = {"name": item["item_name"], "price": item["price"], "quantity": 0,
+            new_cart[item["id"]] = {"name": item["item_name"], "price": item["price"], "quantity": 0,"espresso_count": 0,
                                     "discount": 0, "tax_rate": 0}
         return new_cart
 
@@ -55,7 +55,7 @@ class UserSession:
         """
         return id in self.cart
 
-    def add_new_item(self, id: str, name: str, price: int, quantity: int, discount: float = 0.0, tax_rate: float = 0.05) -> None:
+    def add_new_item(self, id: str, name: str, price: int, quantity: int, espresso_count: int ,discount: float = 0.0, tax_rate: float = 0.05) -> None:
         """
         Creates a new item to add to the user's cart.
 
@@ -64,13 +64,14 @@ class UserSession:
             - name: The name of the item.
             - price: The price of the item.
             - quantity: The quantity of the item.
+            - espresso_count: The quantity of shots of espresso in drink.
             - discount: The discount of the item.
             - tax_rate: The tax rate of the item.
 
         returns:
             - None
         """
-        self.cart[id] = {"name": name, "price": price, "quantity": quantity,
+        self.cart[id] = {"name": name, "price": price, "quantity": quantity, "espresso_count": espresso_count,
                          "discount": discount, "tax_rate": tax_rate}
 
     def update_item_quantity(self, id: str, change_to_quantity: int) -> None:

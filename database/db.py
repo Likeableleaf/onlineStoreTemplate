@@ -404,7 +404,7 @@ class Database:
     # ------------------ Sales -------------------
     # --------------------------------------------
 
-    def insert_new_sale(self, transaction_id: int, username: str, item_id: int, quantity: int, sale_date: dt.date, cost: float):
+    def insert_new_sale(self, transaction_id: int, username: str, item_id: int, quantity: int, espresso_count: int, cost: float, sale_date: dt.date = dt.date.today()):
         """
         Inserts a new sale into the database.
 
@@ -413,15 +413,16 @@ class Database:
             - username: The username of the sale.
             - item_id: The item id of the sale.
             - quantity: The quantity of the sale.
-            - sale_date: The sale date of the sale.
+            - espresso_count: the number of shots in the ordered item
             - cost: The cost of the sale.
+            - sale_date: The sale date of the sale.
 
         returns:
             - None
         """
         self.cursor.execute(
-            "INSERT INTO sales (transaction_id, username, item_id, quantity, sale_date, cost) VALUES (?, ?, ?, ?, ?, ?)",
-            (transaction_id, username, item_id, quantity, sale_date, cost))
+            "INSERT INTO sales (transaction_id, username, item_id, quantity,espresso_count, cost, sale_date) VALUES (?, ?, ?, ?, ?, ?, ?)",
+            (transaction_id, username, item_id, quantity, espresso_count, cost, sale_date))
         self.connection.commit()
 
     # ------ Getter methods ------
@@ -718,4 +719,22 @@ class Database:
 
         self.cursor.execute(
             "UPDATE sales SET cost = ? WHERE id = ?", (new_cost, sale_id))
+        self.connection.commit()
+
+#-----------------------------------------------------
+#reviews
+
+    def insert_new_review(self, review_text: str, username: str) -> None:
+        """
+        Inserts a new review into the database.
+
+        args:
+            - review_text: The text of the order review.
+            - username: The username for the review.
+
+        returns:
+            - None
+        """
+        self.cursor.execute(
+            "INSERT INTO reviews (review_text, username) VALUES (?, ?)", (review_text, username))
         self.connection.commit()

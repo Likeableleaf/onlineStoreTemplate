@@ -23,8 +23,16 @@ CREATE TABLE sales (
     item_id INTEGER NOT NULL,
     quantity INTEGER NOT NULL,
     sale_date DATETIME NOT NULL,
+    espresso_count INTEGER NOT NULL,
     cost DECIMAL(10,2) NOT NULL,
     FOREIGN KEY (username) REFERENCES users(username),
     FOREIGN KEY (item_id) REFERENCES inventory(id)
+);
+
+CREATE TABLE reviews (
+    review_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    review_text VARCHAR(255) NOT NULL,
+    username VARCHAR(255) NOT NULL,
+    FOREIGN KEY (username) REFERENCES users(username)
 );
 
