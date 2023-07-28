@@ -14,7 +14,7 @@ class Product:
         self.stock = stock
         self.image_url = image_url
         self.category = category
-
+        
 class Order:
     def __init__(self, transaction_id, username, item_id, quantity, sale_date, cost) -> None:
         self.transaction_id = transaction_id
