@@ -16,7 +16,15 @@
 
         </div>
     </div>
-    <button type="submit" class="btn btn-primary" id="checkout_button">Check Out</button>
+        <form action="/home" method="post" id="review_form">
+            <div class="form-group" id="review_form_group">
+                <label for="review">Review</label>
+                <textarea class="form-control" id="review" name="review" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" id="review_button">Leave Review</button>
+        </form>
+
+
 </div>
 
 {% endblock %}
