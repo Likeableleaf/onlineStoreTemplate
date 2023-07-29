@@ -44,16 +44,6 @@ def login_page():
 
 
 @app.route('/home', methods=['POST'])
-def home():
-    try:
-        return login()
-    except:
-        return review()
-def review():
-    review = request.form['review']
-    usersession = sessions.get_session(username)
-    usersession.db.insert_new_review(review,username)
-    return render_template('home.html', products=products, sessions=sessions)
 def login():
     """
     Renders the home page when the user is at the `/home` endpoint with a POST request.
@@ -76,7 +66,6 @@ def login():
     else:
         print(f"Incorrect username ({username}) or password ({password}).")
         return render_template('index.html')
-
 
 
 @app.route('/register')
@@ -140,15 +129,14 @@ def checkout():
         if request.form[str(item['id'])] > '0':
             count = request.form[str(item['id'])]
             order[item['item_name']] = count
-            espresso_key = "espresso_count-" + str(item['id'])
-            espresso_count = request.form[espresso_key]
+            espresso_count = 0
             user_session.add_new_item(
-                item['id'], item['item_name'], item['price'], count, espresso_count)
-            user_session.db.insert_new_sale(item['id'],username,item['id'], count, espresso_count, item['price'])
+                item['id'], item['item_name'], item['price'],  count, espresso_count)
+                
 
     user_session.submit_cart()
-
-    return render_template('checkout.html', order=order, sessions=sessions, total_cost=user_session.total_cost)
+    
+    return render_template('checkout.html', order=order, sessions=sessions,espresso_count = espresso_count, total_cost=user_session.total_cost)
 
 
 if __name__ == '__main__':

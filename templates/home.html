@@ -4,7 +4,7 @@
 
 <div class="row" id="products_page">
     <div class="col-md-12">
-        <h3>Products</h3>
+        <h3>Browse Our Coffee:</h3>
         <hr>
         <div class="row">
             <form action="/checkout" method="post">
@@ -18,19 +18,20 @@
                                     <h5 class="product_card-title">{{ product.item_name }}</h5>
                                     <p class="product_card-text">{{ product.info }}</p>
                                     <p class="product_card-price">${{ product.price }}</p>
-                                    <form>
+                                    <!-- <form action="/checkout" method="post"> -->
                                         <div>
-                                    <input type="number" class="quantity" id={{product.id}} name={{product.id}} placeholder="0">
-                                    <label for={{"product.id" ~ product.id}}>Quantity</label>
-                                </div>
-                                <div>
-                                    <input type="number" class="quantity" id={{"espresso_count-" ~ product.id}} 
-                                        name={{"espresso_count-" ~ product.id}} placeholder="0">
-                                        <label for={{"espresso_count-" ~ product.id}}>Espresso Shots</label>
+                                            <input type="number" class="quantity" id={{product.id}} name={{product.id}}
+                                                placeholder="0">
+                                            <label for={{"product.id" ~ product.id}}>Quantity</label>
                                         </div>
-                                         
-                                        <button type="submit" class="btn btn-primary" id="add_to_cart_button">Add to Cart</button>
-                                    </form>
+                                        <div>
+                                            <input type="number" class="quantity" id={{product.espresso_count}}
+                                                name={{product.espresso_count}} placeholder="0">
+                                            <label for={{"product.espresso_count" ~ product.espresso_count}}>Espresso Shots</label>
+                                        </div>
+
+                                        <!-- <button type="submit" class="btn btn-primary" id="add_to_cart_button">Add to Cart</button> -->
+                                    <!-- </form> -->
                                 </div>
                             </div>
                         </div>
@@ -39,7 +40,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12" id="index_buttons">
-                        <button type="submit" class="btn btn-primary" id="checkout_button">Order</button>
+                        <button type="submit" class="btn btn-primary" id="checkout_button">Add to Cart</button>
                     </div>
                 </div>
             </form>

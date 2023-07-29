@@ -5,12 +5,13 @@
 <div class="row" id="products_page">
     
     <div class="col-md-12">
-        <h3>Confirm Your Order Below:</h3>
+        <h3>Confirmation of Your Order Below:</h3>
         <hr>
+        <p> Ordered Items: </p>
         
-        <div class="row">
-            {% for product in products %}
-            <p>{{product.item_name}}</p>
+        <!-- <div class="row"> -->
+            {% for order in order %}
+            <ul>{{ order }} x {{count}}</ul>
             {% endfor %}
             <p> Order Total: ${{ total_cost }}0 </p>
 

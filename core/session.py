@@ -87,6 +87,19 @@ class UserSession:
         else:
             self.cart[id]["quantity"] += change_to_quantity
 
+    def update_item_espresso_count(self, id: str, change_to_espresso_count: int) -> None:
+        """
+        Updates the quantity of an item in the user's cart.
+
+        args:
+            - id: The id of the item.
+            - quantity: The quantity of the item.
+        """
+        if self.cart[id]["espresso_count"] + change_to_espresso_count <= 0:
+            self.remove_item(id)
+        else:
+            self.cart[id]["espresso_count"] += change_to_espresso_count
+
     def remove_item(self, id: str) -> None:
         """
         Removes an item from the user's cart.
