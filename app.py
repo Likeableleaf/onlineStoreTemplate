@@ -123,20 +123,23 @@ def checkout():
         - sessions: adds items to the user's cart
     """
     order = {}
+    num_ordered = {}
     user_session = sessions.get_session(username)
+    # espresso_count = request.form['quantity']
     for item in products:
         print(f"item ID: {item['id']}")
         if request.form[str(item['id'])] > '0':
             count = request.form[str(item['id'])]
             order[item['item_name']] = count
             espresso_count = 0
+            num_ordered[item['id']] = count
             user_session.add_new_item(
                 item['id'], item['item_name'], item['price'],  count, espresso_count)
                 
 
     user_session.submit_cart()
     
-    return render_template('checkout.html', order=order, sessions=sessions,espresso_count = espresso_count, total_cost=user_session.total_cost)
+    return render_template('checkout.html', order=order,num_ordered = num_ordered,sessions=sessions,espresso_count = espresso_count, total_cost=user_session.total_cost)
 
 
 if __name__ == '__main__':
