@@ -5,7 +5,7 @@ class Customer:
         self.email = email
         self.username = username
         self.password = password
-
+    
 class Product:
     def __init__(self, name, info, price, stock, image_url, category) -> None:
         self.name = name
@@ -14,12 +14,16 @@ class Product:
         self.stock = stock
         self.image_url = image_url
         self.category = category
+    
         
 class Order:
-    def __init__(self, transaction_id, username, item_id, quantity, sale_date, cost) -> None:
+    def __init__(self, transaction_id, username, item_id, quantity,size, sale_date, cost) -> None:
         self.transaction_id = transaction_id
         self.username = username
         self.item_id = item_id
         self.quantity = quantity
+        self.size = size
         self.sale_date = sale_date
         self.cost = 0
+      
+ 

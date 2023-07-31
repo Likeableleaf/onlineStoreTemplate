@@ -134,7 +134,7 @@ def checkout():
             espresso_count = 0
             num_ordered[item['id']] = count
             user_session.add_new_item(
-                item['id'], item['item_name'], item['price'],  count, espresso_count)
+                item['id'], item['item_name'], item['price'],  count,'default size', espresso_count)
                 
 
     user_session.submit_cart()

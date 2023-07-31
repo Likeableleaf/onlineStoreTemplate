@@ -13,7 +13,7 @@ class "UserSession" as store.core.session.UserSession #aliceblue {
   db
   total_cost : int
   username : str
-  add_new_item(id: str, name: str, price: int, quantity: int, discount: float, tax_rate: float) -> None
+  add_new_item(id: str, name: str, price: int, quantity: int, size: str, discount: float, tax_rate: float) -> None
   empty_cart() -> dict
   is_item_in_cart(id: str) -> bool
   remove_item(id: str) -> None

@@ -39,7 +39,7 @@ class UserSession:
         inventory = self.db.get_full_inventory()
         new_cart = {}
         for item in inventory:
-            new_cart[item["id"]] = {"name": item["item_name"], "price": item["price"], "quantity": 0,"espresso_count": 0,
+            new_cart[item["id"]] = {"name": item["item_name"], "price": item["price"], "quantity": 0,"espresso_count": 0, "size": 0,
                                     "discount": 0, "tax_rate": 0}
         return new_cart
 
@@ -55,7 +55,7 @@ class UserSession:
         """
         return id in self.cart
 
-    def add_new_item(self, id: str, name: str, price: int, quantity: int, espresso_count: int ,discount: float = 0.0, tax_rate: float = 0.05) -> None:
+    def add_new_item(self, id: str, name: str, price: int, quantity: int, size: str, espresso_count: int ,discount: float = 0.0, tax_rate: float = 0.05) -> None:
         """
         Creates a new item to add to the user's cart.
 
@@ -71,7 +71,7 @@ class UserSession:
         returns:
             - None
         """
-        self.cart[id] = {"name": name, "price": price, "quantity": quantity, "espresso_count": espresso_count,
+        self.cart[id] = {"name": name, "price": price, "quantity": quantity, "size": size, "espresso_count": espresso_count,
                          "discount": discount, "tax_rate": tax_rate}
 
     def update_item_quantity(self, id: str, change_to_quantity: int) -> None:
@@ -99,6 +99,23 @@ class UserSession:
             self.remove_item(id)
         else:
             self.cart[id]["espresso_count"] += change_to_espresso_count
+    
+  # create a def for size of coffee
+    def update_coffee_size(self, id:str, change_to_size: str) -> None:
+        """
+        Update the size of an item in the user's cart.
+        
+        args:
+            -id: The id of the item.
+            -change_to_size: The new size of the coffee.
+        return:
+            -None  
+        """
+        
+        if self.is_item_incart(id):
+            self.cart[id]["size"] = change_to_size
+        
+       
 
     def remove_item(self, id: str) -> None:
         """
