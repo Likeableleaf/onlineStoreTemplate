@@ -58,8 +58,9 @@ def login():
         - sessions: adds a new session to the sessions object
 
     """
-    username = request.form['username']
-    password = request.form['password']
+    print(request.form)
+    username = request.form.get('username')
+    password = request.form.get('password')
     if login_pipeline(username, password):
         sessions.add_new_session(username, db)
         return render_template('home.html', products=products, sessions=sessions)
@@ -124,6 +125,7 @@ def checkout():
     """
     order = {}
     num_ordered = {}
+    espresso_count = 0
     user_session = sessions.get_session(username)
     # espresso_count = request.form['quantity']
     for item in products:
@@ -131,7 +133,7 @@ def checkout():
         if request.form[str(item['id'])] > '0':
             count = request.form[str(item['id'])]
             order[item['item_name']] = count
-            espresso_count = 0
+            
             num_ordered[item['id']] = count
             user_session.add_new_item(
                 item['id'], item['item_name'], item['price'],  count,'default size', espresso_count)
