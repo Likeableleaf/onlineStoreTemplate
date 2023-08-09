@@ -124,19 +124,29 @@ def checkout():
         - sessions: adds items to the user's cart
     """
     order = {}
-    num_ordered = {}
-    espresso_count = 0
+    num_ordered = 0
     user_session = sessions.get_session(username)
-    # espresso_count = request.form['quantity']
+    
     for item in products:
         print(f"item ID: {item['id']}")
         if request.form[str(item['id'])] > '0':
             count = request.form[str(item['id'])]
             order[item['item_name']] = count
+            espresso_count = request.form.get('espresso_count')
+            # num_ordered[item['id']] = count
+            print("quantity:")
+            print(order[item['item_name']])
+            num_ordered = order[item['item_name']]
             
-            num_ordered[item['id']] = count
+            print("espresso:")
+            print(espresso_count) 
+            # print("ORDER:")
+            # print(order)
+            print("num_ordered:")
+            print(num_ordered)
+
             user_session.add_new_item(
-                item['id'], item['item_name'], item['price'],  count,'default size', espresso_count)
+                item['id'], item['item_name'], item['price'], num_ordered,'default size', espresso_count)
                 
 
     user_session.submit_cart()

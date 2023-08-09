@@ -11,7 +11,11 @@
         
         <!-- <div class="row"> -->
             {% for order in order %}
-            <ul>{{ order }}</ul>
+            <ul>{{ order }} </ul>
+           
+            <ul>{{num_ordered}}</ul>
+            
+            <ul>{{espresso_count}}</ul>
             {% endfor %}
             <p> Order Total: ${{ total_cost }} </p>
 

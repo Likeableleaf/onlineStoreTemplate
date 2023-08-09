@@ -22,6 +22,7 @@ CREATE TABLE sales (
     username VARCHAR(255) NOT NULL,
     item_id INTEGER NOT NULL,
     quantity INTEGER NOT NULL,
+    size VARCHAR(255) NOT NULL,
     sale_date DATETIME NOT NULL,
     espresso_count INTEGER NOT NULL,
     cost DECIMAL(10,2) NOT NULL,
